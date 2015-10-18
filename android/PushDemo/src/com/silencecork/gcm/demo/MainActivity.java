@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
 	
 	// this id can be retrieved from Google API Console
 	private static final String SENDER_ID = "";
+	private static final String API_SERVER = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,7 +109,7 @@ public class MainActivity extends Activity {
 				json.put("token", result);
 				JsonObjectRequest request = new JsonObjectRequest(
 						Request.Method.POST,
-						"https://my-push-server.herokuapp.com/subscribe",
+						API_SERVER + "/subscribe",
 						json, mCompleteListener, mErrorListener);
 				String contentType = request.getBodyContentType();
 				Log.d(TAG, "Send To Server " + contentType);
