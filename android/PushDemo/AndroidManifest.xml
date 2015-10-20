@@ -18,6 +18,12 @@
 
     <uses-permission
         android:name="com.silencecork.gcm.demo.permission.C2D_MESSAGE" />
+    
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"
@@ -36,6 +42,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity 
+            android:name=".PushNotificationActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
         
         <receiver
             android:name="com.silencecork.gcm.demo.GCMBroadcastReceiver"
